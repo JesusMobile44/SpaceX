@@ -1,4 +1,5 @@
 package objet;
 
-public class MoteurPlasma {
+public class MoteurPlasma extends Objet {
+
 }

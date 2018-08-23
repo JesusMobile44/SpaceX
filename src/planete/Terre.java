@@ -2,12 +2,12 @@ package planete;
 
 import vaisseau.Vaisseau;
 
-public class Badaboom extends Planete  {
-    public Badaboom() {
-        setNom("Badaboom");
+public class Terre extends Planete {
+    public Terre() {
+        setNom("Terre");
         setCout((int)(Math.random()*30+20));
-        setChancePirate(20);
-        setChanceObjet(20);
+        setChancePirate(0);
+        setChanceObjet(0);
     }
     public void explorer(Vaisseau vaisseau) {
 

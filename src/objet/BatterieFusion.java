@@ -1,4 +1,4 @@
 package objet;
 
-public class BatterieFusion {
+public class BatterieFusion extends Objet {
 }

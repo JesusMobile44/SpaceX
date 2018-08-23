@@ -1,4 +1,5 @@
 package objet;
 
-public class CleMolette {
+public class CleMolette extends Objet {
+
 }

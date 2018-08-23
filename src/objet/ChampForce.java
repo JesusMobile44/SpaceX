@@ -1,4 +1,4 @@
 package objet;
 
-public class ChampForce {
+public class ChampForce extends Objet {
 }
