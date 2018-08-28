@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Labo1.iml" filepath="$PROJECT_DIR$/Labo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NationalSpaceAgencie.iml" filepath="$PROJECT_DIR$/NationalSpaceAgencie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projet.iml" filepath="$PROJECT_DIR$/.idea/Projet.iml" />
     </modules>
   </component>
 </project>

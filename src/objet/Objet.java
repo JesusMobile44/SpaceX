@@ -1,6 +1,8 @@
 package objet;
 
-public class Objet {
+import vaisseau.Vaisseau;
+
+public abstract class Objet {
     private String nom;
 
     public String getNom() {
@@ -9,7 +11,6 @@ public class Objet {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    public void utiliser(){
 
-    }
+    public abstract void utiliser(Vaisseau vaisseau);
 }

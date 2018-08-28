@@ -1,18 +1,23 @@
 package vaisseau;
+import objet.Objet;
 import planete.Planete;
+import planete.Terre;
+
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class Vaisseau {
     int carburant;
     int vie;
-    int tailleInventaire;
     Stack<Planete> trajet;
+    ArrayList<Objet> inventaire;
 
     public Vaisseau() {
         this.carburant = 1000;
         this.vie = 100;
-        this.tailleInventaire = 0;
+        this.inventaire = new ArrayList<>();
         this.trajet = new Stack<>();
+        trajet.push(new Terre());
     }
     public Stack<Planete> getTrajet() {
         return trajet;
@@ -38,11 +43,11 @@ public class Vaisseau {
         this.vie = vie;
     }
 
-    public int getTailleInventaire() {
-        return tailleInventaire;
+    public ArrayList<Objet> getInventaire() {
+        return inventaire;
     }
 
-    public void setTailleInventaire(int tailleInventaire) {
-        this.tailleInventaire = tailleInventaire;
+    public void setInventaire(ArrayList<Objet> inventaire) {
+        this.inventaire = inventaire;
     }
 }
