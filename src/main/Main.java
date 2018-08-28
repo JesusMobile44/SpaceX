@@ -14,16 +14,9 @@ public class Main {
     public static Vaisseau vaisseau = new Vaisseau();
     public static Planete[] listePlanete = new Planete[5];
     public static void main(String[] args) {
-        try{
-            start();
-            while(true){
-                executer(choix());
-            }
-        }
-        catch(Exception exception){
-            System.out.println("It dont work");
-            System.out.println("ono");
-            System.exit(0);
+        start();
+        while(true){
+            executer(choix());
         }
     }
     public static int choix(){
@@ -38,7 +31,7 @@ public class Main {
             return action;
         }
         catch(Exception numero){
-            System.out.println("Entrer un chiffre valide");
+            System.out.println("Entrer un chiffre valide.");
             return 0;
         }
     }
@@ -51,14 +44,13 @@ public class Main {
                 explorer();
                 break;
             case 3:
-
+                utiliser(useMenu());
                 break;
             case 4:
-
+                retour();
                 break;
             default:
-
-
+                break;
         }
     }
     public static void examiner(){
@@ -73,11 +65,12 @@ public class Main {
         System.out.println();
     }
     public static void explorer(){
+        vaisseau.setVaisseauBack(new Vaisseau(vaisseau));
         listePlanete[(int)(Math.random()*5)].explorer(vaisseau);
         System.out.println();
     }
     public static void start(){
-        System.out.println("Bienvenue dans Space explorer!");
+        System.out.println("Bienvenue dans Space explorer !");
         System.out.println();
         listePlanete[0] = new Badabing();
         listePlanete[1] = new Badaboom();
@@ -85,7 +78,36 @@ public class Main {
         listePlanete[3] = new Ibarium();
         listePlanete[4] = new Venus();
     }
+    public static int useMenu(){
+        int choix;
+        System.out.println("Quel objet voulez vous utiliser ?");
+        for (int i=0;i<vaisseau.getInventaire().size();i++){
+            System.out.println("    "+(i+1)+". "+vaisseau.getInventaire().get(i).getNom());
+        }
+        try{
+            choix = sc.nextInt();
+            return (choix-1);
+        }
+        catch (Exception numero){
+            System.out.println("Entrer un chiffre valide.");
+            return 0;
+        }
+    }
+    public static void utiliser(int objet){
+        vaisseau.getInventaire().get(objet).utiliser(vaisseau);
+        vaisseau.getInventaire().remove(objet);
+    }
+    public static void retour(){
+        if (vaisseau.getVaisseauBack()!=null){
+            vaisseau=vaisseau.getVaisseauBack();
+        }
+        else{
+            System.out.println("Impossible de reculer.");
+        }
+    }
     public static void fin(){
+        System.out.println("");
+        System.out.println("===VOUS ÊTES MORT===");
         System.out.println("");
         int size = vaisseau.getTrajet().size();
         Stack<Planete> listeInverse = new Stack<>();

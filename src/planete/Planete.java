@@ -70,22 +70,29 @@ public abstract class Planete {
         Objet objet;
         switch (random){
             case 1:
+                System.out.println("Vous obtenez une Batterie AAA.");
                 objet = new BatterieAAA();
                 break;
             case 2:
+                System.out.println("Vous obtenez une Batterie à Fusion.");
                 objet = new BatterieFusion();
                 break;
             case 3:
+                System.out.println("Vous obtenez une Clé à Molette.");
                 objet = new CleMolette();
                 break;
             case 4:
+                System.out.println("Vous obtenez un Kit de Réparation.");
                 objet = new KitReparation();
                 break;
             case 5:
+                System.out.println("Vous obtenez une Batterie Nucléaire.");
                 objet = new BatterieNucleaire();
                 break;
             default:
+                System.out.println("Vous obtenez une Batterie AAA.");
                 objet = new BatterieAAA();
+                break;
         }
         return objet;
     }
